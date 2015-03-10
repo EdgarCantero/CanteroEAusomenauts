@@ -11,8 +11,12 @@ game.PlayerEntity = me.Entity.extend({
                 }
 
             }]);
-        this.body.setVelocity(5, 0);
+        this.body.setVelocity(5, 20);
+        
+         this.renderable.addAnimation("idle", [78]);
+        this.renderable.addAnimation("walk"[195, 196, 197, 198, 199, 200], 80);
 
+         this.renderable.setCurrentAnimation("idle");
     },
     update: function(delta) {
                if (me.input.isKeyPressed("right")) {
@@ -26,6 +30,11 @@ game.PlayerEntity = me.Entity.extend({
         } else {
             this.body.vel.x = 0;
         }
+        
+                
+          if(!this.renderable.isCurrentAnimation("walk")){
+            this.renderable.setCurrentAnimation("walk");
+            }
 
         if (me.input.isKeyPressed('jump')) {
             if (!this.body.jumping && !this.body.falling) {
@@ -33,7 +42,10 @@ game.PlayerEntity = me.Entity.extend({
                 this.body.jumping = true;
             }
         }
+        
         this.body.update(delta);
+        
+       this._super(me.Entity, "update", [delta]); 
        return true;
     }
 });
