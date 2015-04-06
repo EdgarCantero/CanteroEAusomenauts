@@ -9,16 +9,23 @@ var game = {
                 enemyBaseHealth: 10,
                 playerBaseHealth: 10,
                 enemyCreepHealth: 5,
-                playerHealth: 2,
-                enemyCreepAttack: 10,
-                playerAttack: 1,
+                playerHealth: 25,
+                enemyCreepAttack: 1,
+                playerAttack: 2,
                 playerAttackTimer: 1000,
                 enemyCreepAttackTimer: 1000,
                 playerMoveSpeed: 10,
                 creepMoveSpeed: 5,
                 gameManager: "",
-                player: ""
-        },
+                player: "",
+                exp:  0, 
+                gold: 0,
+                exp1: 0,
+                exp2: 0, 
+                exp3: 0,
+                exp4: 0
+                
+    },
 	
 	
 	// Run on page load.
