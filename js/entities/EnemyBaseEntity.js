@@ -36,8 +36,8 @@ game.EnemyBaseEntity = me.Entity.extend({
     onCollision: function() {
 
     },
-    loseHealth: function() {
-        this.health--;
+    loseHealth: function(damage) {
+        this.health = this.health - damage;
     }
 
 });
