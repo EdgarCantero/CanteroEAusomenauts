@@ -7,13 +7,12 @@ game.SpendExp = me.ScreenObject.extend({
 
         me.game.world.addChild(new (me.Renderable.extend({
             init: function() {
-                this._super(me.Renderable, 'init', [300, 240, 300, 50]);
+                this._super(me.Renderable, 'init', [10, 10, 300, 50]);
                 this.font = new me.Font("Arial", 46, "white");
-                me.input.registerPointerEvent('pointerdown', this, this.newGame.bind(this), true);
             },
             draw: function(renderer) {
-                this.font.draw(renderer.getContext(), "SPEND", this.pos.x, this.pos.y);
-            },
+                this.font.draw(renderer.getContext(), "PRESS F1-F4 TO BUY<br> PRESS F5 TO SKIP", this.pos.x, this.pos.y);
+            }
 
         })));
    },
