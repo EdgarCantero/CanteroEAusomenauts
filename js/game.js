@@ -6,9 +6,9 @@ var game = {
 		// score
 		score : 0,
                 enemyBaseHealth: 10,
-                playerBaseHealth: 10,
+                playerBaseHealth: 4,
                 enemyCreepHealth: 5,
-                playerHealth: 25,
+                playerHealth: 8,
                 enemyCreepAttack: 1,
                 playerAttack: 1,
                 playerAttackTimer: 1000,
