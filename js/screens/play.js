@@ -16,12 +16,24 @@
         me.game.world.addChild(heroDeathManager, 0);    
      
         var experienceManager = me.pool.pull("ExperienceManager", 0, 0, {});
-        me.game.world.addChild(experienceManager, 0);        
+        me.game.world.addChild(experienceManager, 0);     
+        
+        var spendGold = me.pool.pull("SpendGold", 0, 0, {});
+        me.game.world.addChild(spendGold, 0); 
+     
+        me.input.bindKey(me.input.KEY.E, "buy");
+        me.input.bindKey(me.input.KEY.R, "skill-1");
+        me.input.bindKey(me.input.KEY.T, "skill-2");
+        me.input.bindKey(me.input.KEY.Y, "skill-3");
      
         me.input.bindKey(me.input.KEY.RIGHT, "right");
         me.input.bindKey(me.input.KEY.LEFT, 'left');
         me.input.bindKey(me.input.KEY.UP, 'jump');
         me.input.bindKey(me.input.KEY.SPACE, "attack");
+        
+        me.input.bindKey(me.input.KEY.D, "right");
+        me.input.bindKey(me.input.KEY.A, 'left');
+        me.input.bindKey(me.input.KEY.W, 'jump');
 
         // add our HUD to the game world
         this.HUD = new game.HUD.Container();
