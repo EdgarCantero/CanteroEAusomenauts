@@ -74,7 +74,7 @@ game.ExperienceManager = Object.extend({
     
 });
 
-game.spendGold = Object.extend({
+game.SpendGold = Object.extend({
    init:function(x, y, settings){
         this.now = new Date().getTime();
         this.lastBuy = new Date().getTime();
@@ -109,6 +109,40 @@ game.spendGold = Object.extend({
        game.data.buyscreen.setOpacity(0.8);
        me.game.world.addChild(game.data.buyscreen, 34);
        game.data.player.body.setVelocity(0, 0);
+       me.input.bindKey(me.input.KEY.F1, "F1", true);
+       me.input.bindKey(me.input.KEY.F2, "F2", true);
+       me.input.bindKey(me.input.KEY.F3, "F3", true);
+       me.input.bindKey(me.input.KEY.F4, "F4", true);
+       me.input.bindKey(me.input.KEY.F5, "F5", true);
+       me.input.bindKey(me.input.KEY.F6, "F6", true); 
+       this.setBuyText();
+   },
+   
+   setBuyText: function(){
+    game.data.buytext = new (me.Renderable.extend({
+            init: function() {
+                this._super(me.Renderable, 'init', [game.data.pausePos.x, game.data.pausePos.y, 300, 50]);
+                this.font = new me.Font("Arial", 26, "white");
+                this.guide = new me.Font("Lucida Calligraphy", 35, "gold");
+                this.updateWhenPaused = true;
+                this.alwaysUpdate = true;
+            },
+            draw: function(renderer) {
+                this.guide.draw(renderer.getContext(), "PRESS F1-F6 TO BUY,  PRESS E TO Exit. Current Gold: " + game.data.gold, this.pos.x, this.pos.y);
+                this.font.draw(renderer.getContext(), "F1; Skill 1: Increase damage", this.pos.x + 20, this.pos.y + 70);
+                this.font.draw(renderer.getContext(), "F2; Skill 2: Run Faster", this.pos.x + 20, this.pos.y + 110);
+                this.font.draw(renderer.getContext(), "F3; Skill 3: Increase Health", this.pos.x + 20, this.pos.y + 150);
+                this.font.draw(renderer.getContext(), "F4; Z Ability", this.pos.x + 20, this.pos.y + 190);
+                this.font.draw(renderer.getContext(), "F5; X Ability", this.pos.x + 20, this.pos.y + 230);
+                this.font.draw(renderer.getContext(), "F6; C Ability", this.pos.x + 20, this.pos.y + 270);
+                
+            }, 
+            update: function(){
+                return true;
+            }
+
+        })); 
+        me.game.world.addChild(game.data.buytext, 35);
    },
    
    stopBuying: function(){
@@ -116,6 +150,13 @@ game.spendGold = Object.extend({
        me.state.resume(me.state.PLAY);
        game.data.player.body.setVelocity(game.data.playerMoveSpeed, 20);
        me.game.world.removeChild(game.data.buyscreen);
+       me.input.unbindKey(me.input.KEY.F1, "F1", true);
+       me.input.unbindKey(me.input.KEY.F2, "F2", true);
+       me.input.unbindKey(me.input.KEY.F3, "F3", true);
+       me.input.unbindKey(me.input.KEY.F4, "F4", true);
+       me.input.unbindKey(me.input.KEY.F5, "F5", true);
+       me.input.unbindKey(me.input.KEY.F6, "F6", true);
+       me.game.world.removeChild(game.data.buytext);
    }
    
    
