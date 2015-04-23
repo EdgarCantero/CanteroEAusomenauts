@@ -37,7 +37,6 @@
 		<script type="text/javascript" src="js/screens/title.js"></script>
 		<script type="text/javascript" src="js/screens/play.js"></script>
                 <script type="text/javascript" src="js/screens/SpendExp.js"></script>
-                <script type="text/javascript" src="js/screens/Tutorial.js"></script>
                 
 		<!-- /build -->
 		<!-- Bootstrap & Mobile optimization tricks -->
