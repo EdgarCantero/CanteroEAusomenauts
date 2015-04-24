@@ -3,12 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/CanteroEAwsomenauts/js/entities/GameManager.js</file>
             <file>file:/C:/xampp/htdocs/CanteroEAwsomenauts/js/screens/play.js</file>
+            <file>file:/C:/xampp/htdocs/CanteroEAwsomenauts/js/screens/newProfile.js</file>
             <file>file:/C:/xampp/htdocs/CanteroEAwsomenauts/js/game.js</file>
             <file>file:/C:/xampp/htdocs/CanteroEAwsomenauts/index.php</file>
+            <file>file:/C:/xampp/htdocs/CanteroEAwsomenauts/js/GameManager/HeroDeathManager.js</file>
+            <file>file:/C:/xampp/htdocs/CanteroEAwsomenauts/js/GameManager/GameManager.js</file>
+            <file>file:/C:/xampp/htdocs/CanteroEAwsomenauts/js/screens/loadProfile.js</file>
             <file>file:/C:/xampp/htdocs/CanteroEAwsomenauts/js/resources.js</file>
             <file>file:/C:/xampp/htdocs/CanteroEAwsomenauts/js/screens/spendExp.js</file>
+            <file>file:/C:/xampp/htdocs/CanteroEAwsomenauts/js/GameManager/GameTimerManager.js</file>
+            <file>file:/C:/xampp/htdocs/CanteroEAwsomenauts/js/GameManager/SpendGold.js</file>
         </group>
     </open-files>
 </project-private>
