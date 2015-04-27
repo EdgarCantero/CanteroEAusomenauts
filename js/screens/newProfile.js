@@ -3,13 +3,13 @@ game.NewProfile = me.ScreenObject.extend({
      *  action to perform on state change
      */
     onResetEvent: function() {
-        me.game.world.addChild(new me.Sprite(0, 0, me.loader.getImage('exp-screen')), -10); // TODO
+        me.game.world.addChild(new me.Sprite(0, 0, me.loader.getImage('new-screen')), -10); // TODO
 
-        me.input.bindKey(me.input.KEY.F1, "F1");
-        me.input.bindKey(me.input.KEY.F2, "F2");
-        me.input.bindKey(me.input.KEY.F3, "F3");
-        me.input.bindKey(me.input.KEY.F4, "F4");
-        me.input.bindKey(me.input.KEY.F5, "F5");
+        me.input.unbindKey(me.input.KEY.E);
+        me.input.unbindKey(me.input.KEY.R);
+        me.input.unbindKey(me.input.KEY.T);
+        me.input.unbindKey(me.input.KEY.Y);
+        me.input.unbindKey(me.input.KEY.SPACE);
         var exp1cost = ((game.data.exp1 + 1) * 10);
         var exp2cost = ((game.data.exp2 + 1) * 10);
         var exp3cost = ((game.data.exp3 + 1) * 10);

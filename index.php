@@ -42,8 +42,8 @@
                 <script type="text/javascript" src="js/screens/SpendExp.js"></script>
                 <script type="text/javascript" src="js/screens/loadProfile.js"></script>
                 <script type="text/javascript" src="js/screens/newProfile.js"></script>
-                
-		<!-- /build -->
+	                
+	<!-- /build -->
 		<!-- Bootstrap & Mobile optimization tricks -->
 		<script type="text/javascript">
 			window.onReady(function onReady() {
