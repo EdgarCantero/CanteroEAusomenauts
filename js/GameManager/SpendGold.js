@@ -1,4 +1,5 @@
-game.SpendGold = Object.extend({
+//This entire file allows the player to open there "buy gold menu"
+game.SpendGold = Object.extend({   
     init: function(x, y, settings) {
         this.now = new Date().getTime();
         this.lastBuy = new Date().getTime();
@@ -10,6 +11,7 @@ game.SpendGold = Object.extend({
     update: function() {
         this.now = new Date().getTime();
 
+// This if statement asks if the "buy key is pressed" if so the s will bring up the Buy menu         
         if (me.input.isKeyPressed("buy") && this.now - this.lastBuy >= 1000) {
             this.lastBuy = this.now;
             if (!this.buying) {
@@ -46,7 +48,7 @@ game.SpendGold = Object.extend({
             init: function() {
                 this._super(me.Renderable, 'init', [game.data.pausePos.x, game.data.pausePos.y, 300, 50]);
                 this.font = new me.Font("Arial", 26, "white");
-                this.guide = new me.Font("Lucida Calligraphy", 35, "gold");
+                this.guide = new me.Font("Lucida Calligraphy", 30, "gold");
                 this.updateWhenPaused = true;
                 this.alwaysUpdate = true;
             },
@@ -126,24 +128,26 @@ game.SpendGold = Object.extend({
     },
     makePurchase: function(skill) {
         if (skill === 1) {
+            console.log(game.data.gold + " " + ((game.data.skill + 1) * 10));
             game.data.gold -= ((game.data.skill + 1) * 10);
+            console.log(game.data.gold);
             game.data.skill1 += 1;
             game.data.playerAttack += 1;
         } else if (skill === 2) {
             game.data.gold -= ((game.data.skill + 1) * 10);
-            game.data.skill1 += 1;
+            game.data.skill12 += 1;
             game.data.playerMoveSpeed += 1;
         } else if (skill === 3) {
             game.data.gold -= ((game.data.skill + 1) * 10);
-            game.data.skill1 += 1;
+            game.data.skill3 += 1;
             game.data.playerHealth += 1;
-        } else if (ability === 1) {
+        } else if (skill === 4) {
             game.data.gold -= ((game.data.ability1 + 1) * 10);
             game.data.ability1 += 1;
-        } else if (ability === 2) {
+        } else if (skill === 5) {
             game.data.gold -= ((game.data.ability2 + 1) * 10);
             game.data.ability2 += 1;
-        } else if (ability === 3) {
+        } else if (skill === 6) {
             game.data.gold -= ((game.data.ability3 + 1) * 10);
             game.data.ability3 += 1;
         }

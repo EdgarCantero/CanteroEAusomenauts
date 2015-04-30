@@ -12,6 +12,8 @@ game.ExperienceManager = Object.extend({
 
         return true;
     },
+    //this Function states when the player destoys the enemy base they win. when they win the player aquires 10 experience points.
+    //If the players base is destroyed then the player loses and only aquires 1 experience point
     gameOver: function(win) {
         if (win) {
             game.data.exp += 10;
